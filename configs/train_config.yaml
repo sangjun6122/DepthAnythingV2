@@ -1,0 +1,26 @@
+# Depth Anything V2 Fine-tuning Configuration
+# 현미경 Height Map 추정용
+
+seed: 42
+
+# 모델 설정
+model:
+  encoder: vitb                    # vits, vitb, vitl 중 선택
+  max_depth: 100.0                 # μm 단위 최대 깊이
+  min_depth: 0.1                   # μm 단위 최소 깊이
+  pretrained_from: checkpoints/depth_anything_v2_metric_hypersim_vitb.pth
+
+# 데이터 설정
+data:
+  data_dir: data                   # 데이터 디렉토리
+  img_size: 518                    # 입력 이미지 크기
+  train_ratio: 0.9                 # 학습/검증 분할 비율
+
+# 학습 설정
+training:
+  epochs: 50                       # 총 에폭 수
+  batch_size: 4                    # GPU당 배치 크기 (2 GPU × 4 = 8)
+  lr: 0.000005                     # 학습률 (encoder)
+  num_workers: 4                   # DataLoader 워커 수
+  save_path: runs/microscopy_v1    # 체크포인트 저장 경로
+  save_every: 10                   # N 에폭마다 체크포인트 저장

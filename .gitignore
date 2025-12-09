@@ -2,8 +2,6 @@
 data/images/
 data/depth/
 *.npy
-*.jpg
-*.png
 
 # Python
 __pycache__/
@@ -35,3 +33,9 @@ runs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Original model (cloned repo)
+original_model/
+
+# Output
+output/

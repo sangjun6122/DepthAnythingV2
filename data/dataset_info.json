@@ -1,0 +1,9 @@
+{
+  "total_samples": 1190,
+  "original_samples": 119,
+  "crops_per_sample": 10,
+  "crop_size": 518,
+  "depth_unit": "micrometers",
+  "depth_format": "float32 numpy array",
+  "augmentation": "random_crop"
+}
